@@ -1,0 +1,33 @@
+<html>
+<body>
+<script language="JavaScript">
+var canvas = document.createElement('canvas');
+canvas.style.position = 'fixed';
+canvas.style.top = '0px';
+canvas.style.left = '0px';
+canvas.style.zIndex = '-10';
+canvas.width = document.body.offsetWidth;
+canvas.height = window.innerHeight;
+document.body.insertBefore(canvas, document.body.firstChild);
+
+var p=canvas.getContext('2d');
+var img=new Array();
+for(var i=0;i<4;i++){
+	img[i]=new Image();
+	img[i].src=""+(i+1)+".bmp";
+}
+function fon(){
+	for(var i=0;i<20;i++){
+		for(var j=0;j<20;j++){
+			
+			if((i+j)%2)v=Math.floor(Math.random()*(2));
+			else v=Math.floor(Math.random()*(2)+2);
+			p.drawImage(img[v],i*50,j*50);
+		}
+	}
+	var ID=setTimeout('fon()',1000);
+}
+fon();
+</script>
+</body>
+</html>

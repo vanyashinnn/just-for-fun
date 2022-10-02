@@ -1,0 +1,80 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+#page{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+#settings{
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    max-height: 300px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+#settings:hover{
+    opacity: 1;
+}
+div.param{
+    position: relative;
+    margin: 5px;
+    float: left;
+}
+div.param span{
+}
+select{
+  width: 200px;
+}
+#canvas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /* float: left; */
+    bottom: 0px;
+    right: 0px;
+    margin: 0px;
+}
+
+</style>
+<div id="page">
+  <div id="settings">
+    <div class="param">
+      <span><b>Шаблон:</b></span><select id="template" onchange="changedTemplate()">
+      <option value="template1">Разные направления</option>
+      <option value="template2">Вниз</option>
+      <option value="template3">Вверх</option>
+      <option value="template4">Вправо</option>
+      <option value="template5">Влево</option>
+      <option value="template7">По диагонали</option>
+      <option value="template6">Разные скорости строк</option>
+      <option value="template8">Разные направления столбцов</option>
+      <option value="template9">Разные направления строк</option>
+      </select>
+    </div>
+    <div class="param">
+      <span><b>COUNT=</b></span><select id="count" onchange="update()">
+	<option value="100">100</option>
+      </select>
+    </div>
+    <div class="param">
+      <span><b>arc[i].direction=</b></span><input id="direction" type="text" value="0" onchange="update()" title="Направление в градусах для i-го кружка"></input>
+    </div>
+    <div class="param">
+      <span><b>arc[i].speed=</b></span><input id="speed" type="text" value="1000" onchange="update()" title="Скорость для i-го кружка"></input>
+    </div>
+    <div class="param">
+      <span><b>arc[i].radius=</b></span><input id="radius" type="text" value="30" onchange="update()" title="Радиус для i-го кружка"></input>
+    </div>
+    <div class="param">
+      <input type="button" value="Применить" onclick="update()"></input>
+    </div>
+  </div>
+  <canvas id="canvas"></canvas>
+</div>
+
+<script src="cookies.js"></script>
+<script src="index.js"></script>

@@ -1,0 +1,55 @@
+html, body{
+  padding: 0px;
+  margin: 0px;
+}
+#my_component{
+  position: absolute;
+  /*background: rgb(0, 0, 0);/**/
+  width: 100%;
+  height: 100%;
+}
+
+div.calendar{
+  position: absolute;
+  cursor: pointer;
+  transition: 1s;
+}
+div.calendar td.cell{
+  min-width: 50px;
+  height: 50px;
+  color: rgb(100, 100, 100);
+  text-align: center;
+  margin: 0px;
+  border: solid 3px rgba(0, 0, 0, 0);
+  font-family: 'Marmelad', sans-serif;/**/
+  /*font-family: 'Kelly Slab', cursive;/**/
+  /*font-family: 'Comfortaa', cursive;/**/
+  /*font-family: 'Neucha', cursive;/**/
+  font-size: 24px;
+}
+div.calendar td.cm{/*current month*/
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(0, 0, 0);
+}
+div.calendar td.cd{/*current day*/
+  background: rgba(0, 0, 255, 0.2);
+}
+div.calendar td.we{/*weekend*/
+  background: rgba(255, 0, 0, 0.1);
+}
+div.calendar td.we.cm{/*weekend, current month*/
+  background: rgba(255, 0, 0, 0.2);
+}
+div.calendar td.we.cd{/*weekend, current day*/
+  background: rgba(255, 0, 0, 0.3);
+}
+div.calendar td.evt{
+  background: rgba(0, 255, 0, 0.1);
+}
+div.calendar td.info{
+  width: 500px;
+  min-width: 500px;
+}
+div.calendar td.active{
+  border-color: rgb(0, 0, 255);
+}
